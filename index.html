@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Dr. Stéfane Guerra – Odontologia Especializada com foco em estética, saúde bucal e atendimento humanizado em São Paulo." />
+  <title>Dr. Stéfane Guerra – Odontologia Especializada</title>
+  
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --white: #FFFFFF;
+      --black-deep: #0A0A0A;
+      --black-medium: #2D2D2D;
+      --gold-start: #D4AF37;
+      --gold-end: #B8860B;
+      --text-light: var(--black-deep);
+      --text-gray: #555555;
+      --card-bg: #FAFAFA;
+      --border-light: #EEEEEE;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: var(--white);
+      color: var(--text-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--black-deep);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--black-deep);
+    }
+
+    .logo span {
+      background: linear-gradient(90deg, var(--gold-start), var(--gold-end));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.8rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-gray);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--gold-start);
+    }
+
+    .btn-header {
+      padding: 8px 20px;
+      background: linear-gradient(90deg, var(--gold-start), var(--gold-end));
+      color: var(--black-deep);
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-header:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(212, 175, 55, 0.25);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--black-deep);
+      cursor: pointer;
+    }
+
+    /* ===== TRANSIÇÃO ENTRE HEADER E HERO ===== */
+    .hero-intro {
+      height: 4px;
+      background: linear-gradient(to right, var(--gold-start), var(--gold-end));
+      margin-top: 70px;
+      box-shadow: 0 2px 8px rgba(212, 175, 55, 0.15);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background-color: var(--white);
+      padding-top: 2rem;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .text-box h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .text-box h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, var(--gold-start), var(--gold-end));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1.5rem;
+    }
+
+    .text-box p {
+      font-size: 1.1rem;
+      color: var(--text-gray);
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+
+    .image-box img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      display: block;
+    }
+
+    .btn-main {
+      display: inline-block;
+      padding: 14px 32px;
+      background: linear-gradient(90deg, var(--gold-start), var(--gold-end));
+      color: var(--black-deep);
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-main:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    /* ===== OUTRAS SEÇÕES ===== */
+    section[id] {
+      scroll-margin-top: 80px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+      position: relative;
+      color: var(--black-deep);
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(to right, var(--gold-start), var(--gold-end));
+      margin: 0.8rem auto;
+      border-radius: 2px;
+    }
+
+    .about-content {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      color: var(--text-gray);
+    }
+
+    .icon-list {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 120px;
+    }
+
+    .icon-item i {
+      font-size: 1.8rem;
+      background: linear-gradient(90deg, var(--gold-start), var(--gold-end));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .icon-item span {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--text-gray);
+    }
+
+    /* ===== ANTES E DEPOIS - 300x300 COM IMAGEM INTEIRA ===== */
+.before-after-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.case-pair {
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border: 1px solid var(--border-light);
+  width: 100%;
+  max-width: 320px; /* um pouco maior que 300 para margem visual */
+  padding: 15px 0;
+}
+
+.case-images img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain; /* mostra a imagem inteira sem cortar */
+  display: block;
+  margin: 0 auto;
+  background: var(--white); /* fundo branco para transparência */
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+}
+
+.case-label {
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 0.6rem 0;
+  color: var(--gold-start);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+}
+
+/* Responsivo: em telas muito estreitas */
+@media (max-width: 360px) {
+  .case-images img {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      border-color: rgba(212, 175, 55, 0.4);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      color: var(--text-gray);
+      margin-bottom: 1.2rem;
+    }
+
+    .testimonial-author {
+      font-weight: 700;
+      color: var(--gold-start);
+    }
+
+    /* ===== VÍDEO ===== */
+    .video-section {
+      text-align: center;
+    }
+
+    .video-wrapper {
+      max-width: 900px;
+      margin: 0 auto 2rem;
+      padding: 10px;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      background: var(--card-bg);
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .video-text {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--text-gray);
+      font-size: 1.05rem;
+    }
+
+    .location-content {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .map-container {
+      flex: 1;
+      height: 400px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border-light);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .address-box p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-gray);
+    }
+
+    footer {
+      background: var(--white);
+      padding: 3rem 0 2rem;
+      border-top: 1px solid var(--border-light);
+      color: var(--text-gray);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--black-deep);
+    }
+
+    .footer-logo span {
+      background: linear-gradient(90deg, var(--gold-start), var(--gold-end));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      color: var(--black-deep);
+      font-size: 1.3rem;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--gold-start);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-light);
+      color: var(--text-gray);
+      font-size: 0.9rem;
+    }
+
+    .floating-buttons {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 1000;
+    }
+
+    .fab {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-start), var(--gold-end));
+      color: var(--black-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s;
+    }
+
+    .fab:hover {
+      transform: scale(1.1);
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 992px) {
+      .about-content,
+      .location-content {
+        flex-direction: column;
+      }
+      .video-wrapper iframe {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        background: var(--white);
+        width: 80%;
+        height: calc(100vh - 70px);
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        padding: 2rem;
+      }
+
+      nav.active {
+        right: 0;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .text-box p, .text-box h1, .text-box h2 {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .image-box img {
+        max-width: 90%;
+      }
+
+      .text-box h1 { font-size: 2.4rem; }
+      .text-box h2 { font-size: 1.5rem; }
+      .section-title { font-size: 1.8rem; }
+      .video-wrapper iframe { height: 320px; }
+      .hero-intro {
+        margin-top: 60px;
+      }
+
+      /* Ajuste mobile para imagens antes/depois */
+      .case-images img {
+        width: 320px;
+        height: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <a href="#hero" class="logo">Dr. <span>Stéfane Guerra</span></a>
+      
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav id="mainNav">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#antes-depois">Antes e Depois</a></li>
+          <li><a href="#video">Nosso Consultório</a></li>
+          <li><a href="#localizacao">Localização</a></li>
+          <li><a href="https://wa.me/5517988162298" class="btn-header">Agendar Consulta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Transição elegante -->
+  <div class="hero-intro"></div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container hero-content">
+      <div class="text-box">
+        <h1>Dr. Stéfane Guerra</h1>
+        <h2>Odontologia Especializada</h2>
+        <p>Com mais de 10 anos de experiência, alia excelência técnica a um atendimento humanizado, oferecendo soluções personalizadas para saúde e estética bucal com precisão, ética e sofisticação.</p>
+        <a href="https://wa.me/5517988162298" target="_blank" class="btn-main">Agendar Consulta</a>
+      </div>
+      <div class="image-box">
+        <img src="ssss.PNG" alt="Dr. Stéfane Guerra - Odontologista Especializado">
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="container">
+      <h2 class="section-title">Sobre o Profissional</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>O Dr. Stéfane Guerra é especialista em odontologia estética e reabilitação oral, com formação reconhecida nacionalmente e mais de uma década dedicada à transformação de sorrisos com ética, precisão e sensibilidade.</p>
+          <p>Seu consultório combina tecnologia de ponta, protocolos clínicos atualizados e um ambiente acolhedor, onde cada paciente é tratado de forma única. Para ele, odontologia vai além da técnica: é arte, ciência e cuidado humano.</p>
+          
+          <div class="icon-list">
+            <div class="icon-item">
+              <i class="fas fa-graduation-cap"></i>
+              <span>Especialização Avançada</span>
+            </div>
+            <div class="icon-item">
+              <i class="fas fa-heart"></i>
+              <span>Atendimento Humanizado</span>
+            </div>
+            <div class="icon-item">
+              <i class="fas fa-star"></i>
+              <span>Alto Padrão Técnico</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTES E DEPOIS -->
+<section id="antes-depois">
+  <div class="container">
+    <h2 class="section-title">Antes e Depois</h2>
+    <div class="before-after-grid">
+      <!-- Caso 1 -->
+      <div class="case-pair">
+        <div class="case-images">
+          <img src="antes 01.PNG" alt="Antes do tratamento - Caso 1">
+          <div class="case-label">Antes</div>
+          <img src="depois 01.PNG" alt="Depois do tratamento - Caso 1">
+          <div class="case-label">Depois</div>
+        </div>
+      </div>
+      <!-- Caso 2 -->
+      <div class="case-pair">
+        <div class="case-images">
+          <img src="antes 02.PNG" alt="Antes do tratamento - Caso 2">
+          <div class="case-label">Antes</div>
+          <img src="depois 02.PNG" alt="Depois do tratamento - Caso 2">
+          <div class="case-label">Depois</div>
+        </div>
+      </div>
+      <!-- Caso 3 -->
+      <div class="case-pair">
+        <div class="case-images">
+          <img src="antes 03.PNG" alt="Antes do tratamento - Caso 3">
+          <div class="case-label">Antes</div>
+          <img src="depois 03.PNG" alt="Depois do tratamento - Caso 3">
+          <div class="case-label">Depois</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- VÍDEO -->
+  <section id="video">
+    <div class="container video-section">
+      <h2 class="section-title">Nosso Consultório</h2>
+      <div class="video-wrapper">
+        <iframe
+          src="YTDown.com_Shorts_Media_ySHslDOOVZM_001_1080p.mp4"
+          title="Vídeo do Consultório - Dr. Stéfane Guerra"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-text">Conheça nosso espaço projetado para oferecer conforto, privacidade e tecnologia de ponta. Aqui, cada detalhe foi pensado para transformar sua experiência odontológica.</p>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section id="localizacao">
+    <div class="container">
+      <h2 class="section-title">Localização</h2>
+      <div class="location-content">
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.448598130997!2d-46.6333333!3d-23.5505556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59b8b4a3e0a5%3A0x1e0b3a3e3e3e3e3e!2sRua+Augusta%2C+1500+-+Consola%C3%A7%C3%A3o%2C+S%C3%A3o+Paulo+-+SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="address-box">
+          <p><strong>Endereço:</strong><br>Rua Augusta, 1500 – Sala 502<br>Consolação, São Paulo – SP</p>
+          <p>Atendimento com hora marcada.<br>Estacionamento conveniado disponível.</p>
+          <a href="https://waze.com/ul?ll=-23.5505556,-46.6333333&navigate=yes" target="_blank" class="btn-main">Abrir no Waze</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-logo">Dr. Stéfane Guerra</div>
+          <p>Odontologia Especializada com foco em estética, saúde e bem-estar.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/stefany_dentista/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5517988162298" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <h3>Contato</h3>
+          <p>
+            📞 (17) 98816-2298<br>
+            ✉️ contato@drstefane.com.br
+          </p>
+        </div>
+        <div>
+          <h3>Localização</h3>
+          <p>
+            Rua Augusta, 1500 – Sala 502<br>
+            Consolação, São Paulo – SP
+          </p>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2026 Dr. Stéfane Guerra – Odontologia Especializada. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÕES FIXOS -->
+  <div class="floating-buttons">
+    <a href="https://wa.me/5517988162298" target="_blank" class="fab" title="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.instagram.com/stefany_dentista/" target="_blank" class="fab" title="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://waze.com/ul?ll=-23.5505556,-46.6333333&navigate=yes" target="_blank" class="fab" title="Waze">
+      <i class="fas fa-map-marker-alt"></i>
+    </a>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const nav = document.getElementById('mainNav');
+
+      menuToggle.addEventListener('click', function() {
+        nav.classList.toggle('active');
+        const icon = menuToggle.querySelector('i');
+        if (nav.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+
+      const navLinks = nav.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('active');
+          const icon = menuToggle.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
