@@ -298,7 +298,7 @@
 
     .before-after-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
       justify-items: center;
     }
@@ -310,18 +310,20 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.2);
       border: 1px solid var(--border-light);
       width: 100%;
-      max-width: 300px;
+      max-width: 200px;
       padding: 12px;
+      text-align: center;
     }
 
-    .case-images img {
-      width: 280px;
-      height: 280px;
-      object-fit: cover;
+    .case-pair img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
       display: block;
       margin: 0 auto 8px;
       border-radius: 8px;
       border: 1px solid var(--border-light);
+      background: var(--card-bg);
     }
 
     .case-label {
@@ -533,11 +535,6 @@
         padding-top: 1rem;
       }
 
-      .case-images img {
-        width: 280px;
-        height: 280px;
-      }
-
       .tabs {
         flex-direction: column;
         align-items: center;
@@ -548,7 +545,6 @@
         max-width: 300px;
       }
 
-      /* Vídeo responsivo em mobile */
       .video-wrapper {
         width: 95vw;
         height: 95vw;
@@ -563,28 +559,26 @@
   <!-- HEADER -->
   <header>
     <div class="header-container">
-    <div class="logo-container">
-      <img src="logo.PNG" alt="Logo Dr. Stéfane Guerra" class="logo-img">
-      <span class="logo-text">Dr. <span>Stéfane Guerra</span></span>
+      <div class="logo-container">
+        <img src="logo.PNG" alt="Logo Dr. Stéfane Guerra" class="logo-img">
+        <span class="logo-text">Dr. <span>Stéfane Guerra</span></span>
+      </div>
+      
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav id="mainNav">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#antes-depois">Antes e Depois</a></li>
+          <li><a href="#video">Nosso Consultório</a></li>
+          <li><a href="#localizacao">Localização</a></li>
+          <li><a href="https://wa.me/5517988162298" class="btn-header">Agendar Consulta</a></li>
+        </ul>
+      </nav>
     </div>
-    
-    <button class="menu-toggle" id="menuToggle">
-      <i class="fas fa-bars"></i>
-    </button>
-    
-    <nav id="mainNav">
-      <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#antes-depois">Antes e Depois</a></li>
-        <li><a href="#video">Nosso Consultório</a></li>
-        <li><a href="#localizacao">Localização</a></li>
-        <li><a href="https://wa.me/5517988162298" class="btn-header">Agendar Consulta</a></li>
-      </ul>
-    </nav>
-  </div>
   </header>
-
-  <!-- REMOVIDO: <div class="hero-intro"></div> -->
 
   <!-- HERO -->
   <section class="hero" id="hero">
@@ -636,21 +630,21 @@
       <div class="tab-content active" id="ortodontia">
         <div class="before-after-grid">
           <div class="case-pair">
-            <img src="antes_orto_01.jpg" alt="Antes - Ortodontia Caso 1">
+            <img src="antes 03.PNG" alt="Antes - Ortodontia Caso 1">
             <div class="case-label">Antes</div>
-            <img src="depois_orto_01.jpg" alt="Depois - Ortodontia Caso 1">
+            <img src="depois 03.PNG" alt="Depois - Ortodontia Caso 1">
             <div class="case-label">Depois</div>
           </div>
           <div class="case-pair">
-            <img src="antes_orto_02.jpg" alt="Antes - Ortodontia Caso 2">
+            <img src="antes 03.PNG" alt="Antes - Ortodontia Caso 2">
             <div class="case-label">Antes</div>
-            <img src="depois_orto_02.jpg" alt="Depois - Ortodontia Caso 2">
+            <img src="depois 03.PNG" alt="Depois - Ortodontia Caso 2">
             <div class="case-label">Depois</div>
           </div>
           <div class="case-pair">
-            <img src="antes_orto_03.jpg" alt="Antes - Ortodontia Caso 3">
+            <img src="antes 03.PNG" alt="Antes - Ortodontia Caso 3">
             <div class="case-label">Antes</div>
-            <img src="depois_orto_03.jpg" alt="Depois - Ortodontia Caso 3">
+            <img src="depois 03.PNG" alt="Depois - Ortodontia Caso 3">
             <div class="case-label">Depois</div>
           </div>
         </div>
@@ -660,21 +654,21 @@
       <div class="tab-content" id="implantodontia">
         <div class="before-after-grid">
           <div class="case-pair">
-            <img src="antes_implante_01.jpg" alt="Antes - Implante Caso 1">
+            <img src="antes 01.PNG" alt="Antes - Implante Caso 1">
             <div class="case-label">Antes</div>
-            <img src="depois_implante_01.jpg" alt="Depois - Implante Caso 1">
+            <img src="depois 01.PNG" alt="Depois - Implante Caso 1">
             <div class="case-label">Depois</div>
           </div>
           <div class="case-pair">
-            <img src="antes_implante_02.jpg" alt="Antes - Implante Caso 2">
+            <img src="antes 01.PNG" alt="Antes - Implante Caso 2">
             <div class="case-label">Antes</div>
-            <img src="depois_implante_02.jpg" alt="Depois - Implante Caso 2">
+            <img src="depois 01.PNG" alt="Depois - Implante Caso 2">
             <div class="case-label">Depois</div>
           </div>
           <div class="case-pair">
-            <img src="antes_implante_03.jpg" alt="Antes - Implante Caso 3">
+            <img src="antes 01.PNG" alt="Antes - Implante Caso 3">
             <div class="case-label">Antes</div>
-            <img src="depois_implante_03.jpg" alt="Depois - Implante Caso 3">
+            <img src="depois 01.PNG" alt="Depois - Implante Caso 3">
             <div class="case-label">Depois</div>
           </div>
         </div>
@@ -684,21 +678,21 @@
       <div class="tab-content" id="reabilitacao">
         <div class="before-after-grid">
           <div class="case-pair">
-            <img src="antes_reab_01.jpg" alt="Antes - Reabilitação Caso 1">
+            <img src="antes 02.PNG" alt="Antes - Reabilitação Caso 1">
             <div class="case-label">Antes</div>
-            <img src="depois_reab_01.jpg" alt="Depois - Reabilitação Caso 1">
+            <img src="depois 02.PNG" alt="Depois - Reabilitação Caso 1">
             <div class="case-label">Depois</div>
           </div>
           <div class="case-pair">
-            <img src="antes_reab_02.jpg" alt="Antes - Reabilitação Caso 2">
+            <img src="antes 02.PNG" alt="Antes - Reabilitação Caso 2">
             <div class="case-label">Antes</div>
-            <img src="depois_reab_02.jpg" alt="Depois - Reabilitação Caso 2">
+            <img src="depois 02.PNG" alt="Depois - Reabilitação Caso 2">
             <div class="case-label">Depois</div>
           </div>
           <div class="case-pair">
-            <img src="antes_reab_03.jpg" alt="Antes - Reabilitação Caso 3">
+            <img src="antes 02.PNG" alt="Antes - Reabilitação Caso 3">
             <div class="case-label">Antes</div>
-            <img src="depois_reab_03.jpg" alt="Depois - Reabilitação Caso 3">
+            <img src="depois 02.PNG" alt="Depois - Reabilitação Caso 3">
             <div class="case-label">Depois</div>
           </div>
         </div>
@@ -712,7 +706,7 @@
       <h2 class="section-title">Nosso Consultório</h2>
       <div class="video-wrapper">
         <video controls>
-          <source src="YTDown.com_Shorts_Media_ySHslDOOVZM_001_1080p.mp4" type="video/mp4">
+          <source src="" type="video/mp4">
           Seu navegador não suporta vídeos.
         </video>
       </div>
